@@ -14,6 +14,7 @@ end
 # NEW action 1 of 7. Must be above the SHOW route!
 # There is a link in layout.erb that takes you to the Order form.
 get "/students/new" do
+  @houses = House.all()
   erb(:new)
 end
 

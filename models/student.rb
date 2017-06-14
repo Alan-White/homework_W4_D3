@@ -3,7 +3,7 @@ require("pry")
 
 class Student
 
-  attr_reader :first_name, :last_name, :house, :age, :id
+  attr_reader :first_name, :last_name, :house_id, :age, :id
 
   def initialize(options)
     @id = options['id'].to_i
@@ -14,7 +14,7 @@ class Student
   end
 
   def save()
-    sql = "INSERT INTO students (first_name, last_name, house_id, age) VALUES ('#{@first_name}', '#{@last_name}', '#{@house_id}', '#{@age}') RETURNING*;"
+    sql = "INSERT INTO students (first_name, last_name, house_id, age) VALUES ('#{@first_name}', '#{@last_name}', #{@house_id}, #{@age}) RETURNING*;"
     details = SqlRunner.run(sql)
     @id = details.first()['id'].to_i
   end
@@ -27,7 +27,7 @@ class Student
   end
   
   def self.find( id )
-    sql = "SELECT * FROM students WHERE id=#{id};"
+    sql = "SELECT * FROM students WHERE id=#{@id};"
     student = SqlRunner.run( sql )
     result = Student.new( student.first )
     return result
