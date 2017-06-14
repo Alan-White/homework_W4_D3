@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hogwarts</title>
+  <link rel="stylesheet" type="text/css" href="hogwarts_lab/public/style.css">
+</head>
+<body>
+  <h1>Hogwarts students and houses.</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="/students">All students</a>
+      </li>
+      <li>
+        <a href="/students/new">Add student to list</a>
+      </li>
+    </ul>
+  </nav>
+  <%= yield %>
+
+</body>
+<footer>
+  <img src="hogwarts_lab/public/images/Gryf_logo.jpeg" alt="house logo" style="width:200px; height:auto;"/>
+  <img src="hogwarts_lab/public/images/Huff_logo.jpeg" alt="house logo" style="width:200px; height:auto;"/>
+  <img src="hogwarts_lab/public/images/Raven_logo.jpeg" alt="house logo" style="width:200px; height:auto;"/>
+  <img src="hogwarts_lab/public/images/Slyth_logo.jpeg" alt="house logo" style="width:200px; height:auto;"/>
+</footer>
+</html>
