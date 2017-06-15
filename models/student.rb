@@ -26,8 +26,8 @@ class Student
     return result
   end
   
-  def self.find( id )
-    sql = "SELECT * FROM students WHERE id=#{@id};"
+  def self.find(id) # IS THE id IN BRACKETS NECESSARY????????????????
+    sql = "SELECT * FROM students WHERE id= #{id}"
     student = SqlRunner.run( sql )
     result = Student.new( student.first )
     return result

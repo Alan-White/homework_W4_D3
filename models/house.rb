@@ -25,7 +25,8 @@ class House
   end
 
   def self.find( id )
-    sql = "SELECT * FROM houses WHERE id=#{id};"
+    sql = "SELECT * FROM houses WHERE id=#{id};" 
+    # self.find(beard) must match WHERE id=#@{beard}???????
     house = SqlRunner.run( sql )
     result = House.new( house.first )
     return result

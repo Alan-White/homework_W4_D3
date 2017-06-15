@@ -1,7 +1,8 @@
 <h1>All students at Hogwarts.</h1>
 
 <% @students.each do |student|%> 
-  <p>Student's name: <%= student.full_name() %></p> <p>Student's house: <%= student.find_students_house().house_name %></p>
+  <p>Student's name: <%= student.full_name() %></p> 
+  <p>Student's house: <%= student.find_students_house().house_name %></p>
   <p>Student's age: <%= student.age() %></p>
   <p>Student's id: <%= student.id() %></p>
 
